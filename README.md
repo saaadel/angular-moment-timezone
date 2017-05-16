@@ -1,28 +1,122 @@
-# AngularMomentTimezone
+# angular-moment-timezone
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.3.
+moment-timezone.js pipes for Angular
 
-## Development server
+[![Build Status](https://travis-ci.org/saaadel/angular-moment-timezone.png?branch=master)](https://travis-ci.org/saaadel/angular-moment-timezone)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+This module works with Angular 2.0 and above.
 
-## Code scaffolding
+Installation
+------------
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
+`npm install --save angular-moment-timezone`
 
-## Build
+If you use typescript 1.8, and [typings](https://github.com/typings/typings), you may also need to install typings for moment.js:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+`typings install --save moment moment-timezone`
 
-## Running unit tests
+### For System.js users:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+First you need to install moment:
 
-## Running end-to-end tests
+`npm install --save moment moment-timezone`
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+Don´t forget to update your systemjs.config.js:
 
-## Further help
+```
+packages: {
+            app: {
+                main: './main.js',
+                defaultExtension: 'js'
+            },
+            'moment': {
+                main: './moment.js',
+                defaultExtension: 'js'
+            },
+            'moment-timezone': {
+                main: './moment-timezone.js',
+                defaultExtension: 'js'
+            },
+            'angular-moment-timezone': {
+                main: './index.js',
+                defaultExtension: 'js'
+            }
+        }
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Usage
+-----
+
+Import `MomentTimezoneModule` into your app's modules:
+
+``` typescript
+import {MomentTimezoneModule} from 'angular-moment-timezone';
+
+@NgModule({
+  imports: [
+    MomentTimezoneModule
+  ]
+})
+```
+
+This makes all the `angular-moment-timezone` pipes available for use in your app components.
+
+
+Available pipes
+---------------
+
+Note: [angular2-moment](https://github.com/urish/angular2-moment) pipes also used in examples.
+
+
+## amTz pipe
+Takes an optional `parseInZone` argument that defaults to `false`.
+
+``` typescript
+@Component({
+  selector: 'app',
+  template: `
+    Last updated: {{myDate | amTz:'America/New_York' | amDateFormat }}
+  `
+})
+```
+
+Prints date in "America/New_York" timezone.
+
+
+Complete Example
+----------------
+
+``` typescript
+import {NgModule, Component} from 'angular2/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import {MomentModule} from 'angular2-moment';
+import {MomentTimezoneModule} from 'angular-moment-timezone';
+
+@Component({
+  selector: 'app',
+  template: `
+    Last updated: <b>{{myDate  | amTz:'America/New_York' | amDateFormat }}</b>
+  `
+})
+export class AppComponent {
+  myDate: Date;
+
+  constructor() {
+    this.myDate = new Date();
+  }
+}
+
+@NgModule({
+  imports: [
+    BrowserModule,
+    MomentModule,
+    MomentTimezoneModule
+  ],
+  declarations: [ AppComponent ]
+  bootstrap: [ AppComponent ]
+})
+class AppModule {}
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+```
