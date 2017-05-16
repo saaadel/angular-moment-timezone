@@ -1,0 +1,14 @@
+/.*
+*.iml
+*.iws
+
+/node_modules/
+/dist/
+/out/
+out-tsc
+/npm-debug.log
+
+/src/**
+/karma.conf.js
+/tsconfig.json
+/tslint.json

@@ -1,0 +1,15 @@
+# Created by .ignore support plugin (hsz.mobi)
+/.idea/
+*.iws
+*.iml
+/.project
+/.classpath
+
+node_modules/
+/dist/
+/out/
+out-tsc
+/npm-debug.log
+
+/src/**/*.ngfactory.*
+/src/**/*.ngsummary.*
