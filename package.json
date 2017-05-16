@@ -1,6 +1,6 @@
 {
   "name": "angular-moment-timezone",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/saaadel/angular-moment-timezone.git"
@@ -38,6 +38,10 @@
     "tz.pipe.metadata.json",
     "tz.pipe.ngsummary.json"
   ],
+  "engines": {
+    "node": ">=6.10.3",
+    "npm": ">=3.10.10"
+  },
   "scripts": {
     "prepublish": "del-cli -f src/**/*.ngfactory.* src/**/*.ngsummary.* src/node_modules/ out-tsc/ && ngc -p src/tsconfig.demo.json && copyfiles -f out-tsc/demo/angular-moment-timezone/*.d.ts out-tsc/demo/angular-moment-timezone/*.js out-tsc/demo/angular-moment-timezone/*.js.map out-tsc/demo/angular-moment-timezone/*.metadata.json src/angular-moment-timezone/*.ngfactory.* src/angular-moment-timezone/*.ngsummary.* !out-tsc/**/*.spec.d.ts !out-tsc/**/*.spec.js ./ && del-cli -f src/**/*.ngfactory.* src/**/*.ngsummary.* src/node_modules/ out-tsc/",
     "ng": "ng",

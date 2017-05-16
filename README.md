@@ -2,7 +2,7 @@
 
 moment-timezone.js pipes for Angular
 
-[![Build Status](https://travis-ci.org/saaadel/angular-moment-timezone.png?branch=master)](https://travis-ci.org/saaadel/angular-moment-timezone)
+[![Build Status](https://travis-ci.org/saaadel/angular-moment-timezone.svg?branch=master)](https://travis-ci.org/saaadel/angular-moment-timezone)
 
 This module works with Angular 2.0 and above.
 
