@@ -23,10 +23,13 @@ out-tsc
 /moment-timezone.module.js
 /moment-timezone.module.js.map
 /moment-timezone.module.metadata.json
-/moment-timezone.module.ngfactory.ts
+/moment-timezone.module.ngfactory.d.ts
+/moment-timezone.module.ngfactory.js
+/moment-timezone.module.ngfactory.js.map
 /moment-timezone.module.ngsummary.json
 /tz.pipe.d.ts
 /tz.pipe.js
 /tz.pipe.js.map
 /tz.pipe.metadata.json
+/tz.pipe.ngfactory.js.map
 /tz.pipe.ngsummary.json
