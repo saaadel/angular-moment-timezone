@@ -125,6 +125,8 @@ Examples and amTz second param meaning:
 --------------------------------------
 See examples below with all variation. 'Current Time Zone' term is Time Zone for your (client) browser.
 
+Input value without defined TZ:
+
 ```html
 <div>{{ '2007-03-01T13:00:00Z' }} (raw: TZ - UTC)</div>
 
@@ -134,7 +136,9 @@ See examples below with all variation. 'Current Time Zone' term is Time Zone for
 
 <div>{{ '2007-03-01T13:00:00Z' | amTz:"America/New_York":true | amDateFormat }} (formatted: in America/NY TZ, parse in UTC) = 2007-03-01T08:00:00-05:00</div>
 ```
---
+
+Input value with defined TZ:
+
 ```html
 <div>{{ '2007-03-01T13:00:00' }} (raw: TZ - Unknown )</div>
 
