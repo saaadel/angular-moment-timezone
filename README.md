@@ -148,3 +148,8 @@ Input value with defined TZ:
 
 <div>{{ '2007-03-01T13:00:00' | amTz:"America/New_York":true | amDateFormat }} (formatted: in America/NY TZ, parse in America/NY TZ) = 2007-03-01T13:00:00-05:00</div>
 ```
+
+Demo
+----
+
+[See online demo on Plunker](http://plnkr.co/todo?p=preview)
