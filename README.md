@@ -120,3 +120,27 @@ class AppModule {}
 
 platformBrowserDynamic().bootstrapModule(AppModule);
 ```
+
+Examples and amTz second param meaning:
+--------------------------------------
+See examples below with all variation. 'Current Time Zone' term is Time Zone for your (client) browser.
+
+```html
+<div>{{ '2007-03-01T13:00:00Z' }} (raw: TZ - UTC)</div>
+
+<div>{{ '2007-03-01T13:00:00Z' | amDateFormat }} (formatted: in current TZ, parse in UTC) = 2007-03-01T16:00:00+03:00</div>
+
+<div>{{ '2007-03-01T13:00:00Z' | amTz:"America/New_York":false | amDateFormat }} (formatted: in America/NY TZ, parse in UTC ) = 2007-03-01T08:00:00-05:00</div>
+
+<div>{{ '2007-03-01T13:00:00Z' | amTz:"America/New_York":true | amDateFormat }} (formatted: in America/NY TZ, parse in UTC) = 2007-03-01T08:00:00-05:00</div>
+```
+--
+```html
+<div>{{ '2007-03-01T13:00:00' }} (raw: TZ - Unknown )</div>
+
+<div>{{ '2007-03-01T13:00:00' | amDateFormat }} (formatted: in current TZ, parse in current TZ) = 2007-03-01T13:00:00+03:00</div>
+
+<div>{{ '2007-03-01T13:00:00' | amTz:"America/New_York":false | amDateFormat }} (formatted: in America/NY TZ, parse in current TZ) = 2007-03-01T05:00:00-05:00</div>
+
+<div>{{ '2007-03-01T13:00:00' | amTz:"America/New_York":true | amDateFormat }} (formatted: in America/NY TZ, parse in America/NY TZ) = 2007-03-01T13:00:00-05:00</div>
+```
