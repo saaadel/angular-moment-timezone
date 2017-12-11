@@ -1,6 +1,6 @@
 {
   "name": "angular-moment-timezone",
-  "version": "1.7.1",
+  "version": "1.7.2",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/saaadel/angular-moment-timezone.git"
@@ -68,7 +68,6 @@
     "@angular/platform-browser": "^5.0.0",
     "@angular/platform-browser-dynamic": "^5.0.0",
     "@angular/router": "^5.0.0",
-    "@types/moment-timezone": "^0.5.2",
     "angular2-moment": "^1.7.0",
     "core-js": "^2.5.1",
     "moment": "^2.19.2",
@@ -80,6 +79,7 @@
     "@angular/cli": "1.5.4",
     "@angular/compiler-cli": "^5.0.0",
     "@types/jasmine": "~2.8.2",
+    "@types/moment-timezone": "^0.5.2",
     "@types/node": "~8.0.53",
     "codelyzer": "~4.0.1",
     "copyfiles": "~1.2.0",
